@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application id="SDK-TS-cloudtest">
+    <jobTemplates>
+        <jobTemplate id="job1">
+            <streamingExecutable>/application/job_template_1/run</streamingExecutable>
+	    <defaultParameters>
+              <parameter id="inputKML">/application/job_template_1/etc/rois</parameter>
+	      <parameter type="opensearch" id="bbox" title="Bounding Box" abstract="The bounding box parameter" scope="test" target="geo:box">-11,37,-9,39</parameter> <!-- REGION -->
+            </defaultParameters>
+            <defaultJobconf>
+              <property id="mapred.task.timeout">20000000</property>
+            </defaultJobconf>
+        </jobTemplate>
+        <jobTemplate id="job2">
+            <streamingExecutable>/application/job_template_2/run</streamingExecutable>
+            <defaultParameters>
+              <parameter id="subject">SenSyF_Automatic_Notification</parameter>
+              <parameter id="body">/application/job_template_2/etc/message_body.txt</parameter>
+              <parameter id="email_address">joao.andrade@deimos.com.pt</parameter>
+              <parameter id="attachment">./application/etc/</parameter>
+            </defaultParameters>
+            <defaultJobconf>
+              <property id="mapred.task.timeout">3600000</property>
+              <property id="ciop.job.max.tasks">1</property>
+            </defaultJobconf>
+        </jobTemplate>
+    </jobTemplates>
+    <workflow id="workflow-TS-cloudtest">    <!-- SDK-TS-002 workflow -->
+        <workflowVersion>1.0</workflowVersion>
+        <node id="JOB1-Data_process">
+            <job id="job1"></job>
+            <sources>
+               <source refid="cas:series">http://sensyf.terradue.int/catalogue/search/LANDSAT_8/description</source> <!-- to get inputs from the catalogue, LANDSAT_8 repository -->
+            </sources>
+        </node>
+        <node id="JOB2-sensyf-mail">
+            <job id="job2"></job>
+            <sources>
+               <source refid="wf:node" >JOB1-Data_process</source>
+            </sources>
+        </node>
+    </workflow>
+</application>
