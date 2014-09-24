@@ -18,13 +18,13 @@ This repository contains the first approach of the usecase to test the deploymen
 1. Before enter on the sandbox run on your local machine:
 
       ```bash
-      $ssh-add < username >.pem
+      ssh-add < username >.pem
       ```
 
 2. Enter on the sandbox:
 
       ```bash
-      $ ssh -A -i < username.pem > sensyf-sdk@< sandbox_host >
+      ssh -A -i < username.pem > sensyf-sdk@< sandbox_host >
       ```
 
 3. Run the following commands:
