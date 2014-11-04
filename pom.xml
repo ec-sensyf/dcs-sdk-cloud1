@@ -24,9 +24,49 @@
 		<github.global.server>github</github.global.server>
 		<github.site.repositoryName>dcs-sdk-cloud1</github.site.repositoryName>
 		<github.site.repositoryOwner>ec-sensyf</github.site.repositoryOwner>
+		<beam.version>5.0</beam.version>
+		<nest.version>5.1</nest.version>
+		<netcdf.version>4.2.20</netcdf.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.esa.beam</groupId>
+			<artifactId>beam-gpf</artifactId>
+			<version>5.0.1-4.10.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.beam</groupId>
+			<artifactId>beam-envisat-reader</artifactId>
+			<version>${beam.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.beam</groupId>
+			<artifactId>beam-geotiff</artifactId>
+			<version>${beam.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.beam</groupId>
+			<artifactId>beam-binning</artifactId>
+			<version>${beam.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.beam</groupId>
+			<artifactId>beam-pconvert</artifactId>
+			<version>${beam.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.beam</groupId>
+			<artifactId>beam-nest-common</artifactId>
+			<version>${beam.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ncsa.hdf</groupId>
+			<artifactId>lib-hdf</artifactId>
+			<version>2.7</version>
+		</dependency>
+		<!-- NEST Modules ############################################# -->
+
 		<dependency>
 			<groupId>org.esa.nest</groupId>
 			<artifactId>nest-core</artifactId>
