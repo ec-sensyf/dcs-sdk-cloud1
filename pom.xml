@@ -16,6 +16,15 @@
 		<tag>HEAD</tag>
 	</scm>
 	
+	<dependencies>
+		<dependency>
+			<groupId>com.terradue.ciop.app</groupId>
+			<artifactId>dcs-nest-coregistration</artifactId>
+			<description>NEST Java Processing</description>
+			<version>0.1</version>
+		</dependency>
+	</dependencies>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
