@@ -15,15 +15,64 @@
 		<url>https://github.com/ec-sensyf/dcs-sdk-cloud1</url>
 		<tag>HEAD</tag>
 	</scm>
-	
 	<dependencies>
 		<dependency>
 			<groupId>org.esa.nest</groupId>
-    			<artifactId>nest</artifactId>
-    			<version>5.1</version>
+			<artifactId>nest-core</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-dat</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-graph-builder</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-op-calibration</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-op-coregistration</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+                        <groupId>org.esa.nest</groupId>
+                        <artifactId>nest-op-orthorectification</artifactId>
+                        <version>${nest.version}</version>
+                </dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-op-sar-tools</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-op-sentinel1</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-ocean-tools</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-io</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-reader-dem</artifactId>
+			<version>${nest.version}</version>
 		</dependency>
 	</dependencies>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
