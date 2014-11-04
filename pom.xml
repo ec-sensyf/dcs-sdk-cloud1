@@ -26,6 +26,16 @@
 		<github.site.repositoryOwner>ec-sensyf</github.site.repositoryOwner>
 	</properties>
 	
+	<dependencies>
+		<dependency>
+			<groupId>com.terradue.ciop.app</groupId>
+			<artifactId>dcs-nest-coregistration</artifactId>
+			<packaging>rpm</packaging>
+			<description>NEST Java Processing</description>
+			<version>0.1</version>
+		</dependency>
+	</dependencies>
+	
 	<build>
 		<extensions>
 			<extension>
