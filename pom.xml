@@ -15,7 +15,7 @@
 		<url>https://github.com/ec-sensyf/dcs-sdk-cloud1</url>
 		<tag>HEAD</tag>
 	</scm>
-
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
@@ -24,139 +24,8 @@
 		<github.global.server>github</github.global.server>
 		<github.site.repositoryName>dcs-sdk-cloud1</github.site.repositoryName>
 		<github.site.repositoryOwner>ec-sensyf</github.site.repositoryOwner>
-		<beam.version>5.0</beam.version>
-		<nest.version>5.1</nest.version>
-		<netcdf.version>4.2.20</netcdf.version>
 	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.esa.beam</groupId>
-			<artifactId>beam-gpf</artifactId>
-			<version>5.0.1-4.10.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.beam</groupId>
-			<artifactId>beam-envisat-reader</artifactId>
-			<version>${beam.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.beam</groupId>
-			<artifactId>beam-geotiff</artifactId>
-			<version>${beam.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.beam</groupId>
-			<artifactId>beam-binning</artifactId>
-			<version>${beam.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.beam</groupId>
-			<artifactId>beam-pconvert</artifactId>
-			<version>${beam.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.beam</groupId>
-			<artifactId>beam-nest-common</artifactId>
-			<version>${beam.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>ncsa.hdf</groupId>
-			<artifactId>lib-hdf</artifactId>
-			<version>2.7</version>
-		</dependency>
-		<!-- NEST Modules ############################################# -->
-
-		<dependency>
-			<groupId>org.esa.nest</groupId>
-			<artifactId>nest-core</artifactId>
-			<version>${nest.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.nest</groupId>
-			<artifactId>nest-dat</artifactId>
-			<version>${nest.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.nest</groupId>
-			<artifactId>nest-graph-builder</artifactId>
-			<version>${nest.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.nest</groupId>
-			<artifactId>nest-op-calibration</artifactId>
-			<version>${nest.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.nest</groupId>
-			<artifactId>nest-op-coregistration</artifactId>
-			<version>${nest.version}</version>
-		</dependency>
-		<dependency>
-                        <groupId>org.esa.nest</groupId>
-                        <artifactId>nest-op-orthorectification</artifactId>
-                        <version>${nest.version}</version>
-                </dependency>
-		<dependency>
-			<groupId>org.esa.nest</groupId>
-			<artifactId>nest-op-sar-tools</artifactId>
-			<version>${nest.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.nest</groupId>
-			<artifactId>nest-io-sentinel1</artifactId>
-			<version>${nest.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.nest</groupId>
-			<artifactId>nest-op-sentinel1</artifactId>
-			<version>${nest.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.nest</groupId>
-			<artifactId>nest-ocean-tools</artifactId>
-			<version>${nest.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.nest</groupId>
-			<artifactId>nest-io</artifactId>
-			<version>${nest.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.esa.nest</groupId>
-			<artifactId>nest-reader-dem</artifactId>
-			<version>${nest.version}</version>
-		</dependency>
-		<dependency>
-		                <groupId>edu.ucar</groupId>
-		                                <artifactId>netcdf</artifactId>
-		                                                <version>${netcdf.version}</version>
-
-		                                                				<exclusions>
-		                                                									<exclusion>
-		                                                															<groupId>org.slf4j</groupId>
-		                                                																					<artifactId>slf4j-api</artifactId>
-		                                                																										</exclusion>
-		                                                																														</exclusions>
-		                                                																														            </dependency>
-	</dependencies>
-
-	<repositories>
-		<repository>
-			<id>bc-mvn</id>
-			<name>Public Maven Repository at Brockmann Consult</name>
-			<url>http://www.brockmann-consult.de/mvn/os</url>
-			<releases>
-				<enabled>true</enabled>
-				<checksumPolicy>warn</checksumPolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<checksumPolicy>warn</checksumPolicy>
-			</snapshots>
-		</repository>
-	</repositories>
-
+	
 	<build>
 		<extensions>
 			<extension>
@@ -233,54 +102,6 @@
 								</resource>
 							</resources>
 						</configuration>
-					</execution>
-					<execution>
-						<id>copy-jars</id>
-						<phase>install</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>/application/shared/lib</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${project.build.directory}/dependency/jars</directory>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-					<execution>
-						<id>copy-modules</id>
-						<phase>install</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>/application/shared/modules</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${project.build.directory}</directory>
-									<includes>
-										<include>${project.artifactId}-${project.version}.jar</include>
-									</includes>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
-				<executions>
-					<execution>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>jar</goal>
-							<goal>test-jar</goal>
-						</goals>
 					</execution>
 				</executions>
 			</plugin>
