@@ -18,10 +18,9 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>com.terradue.ciop.app</groupId>
-			<artifactId>dcs-nest-coregistration</artifactId>
-			<description>NEST Java Processing</description>
-			<version>0.1</version>
+			<groupId>org.esa.nest</groupId>
+    			<artifactId>nest</artifactId>
+    			<version>5.1</version>
 		</dependency>
 	</dependencies>
 	
