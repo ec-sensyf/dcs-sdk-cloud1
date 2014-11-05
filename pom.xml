@@ -94,7 +94,6 @@
 		        <groupId>edu.ucar</groupId>
 		        <artifactId>netcdf</artifactId>
 		        <version>${netcdf.version}</version>
-			<exclusions>
             	</dependency>
         </dependencies>
 	
