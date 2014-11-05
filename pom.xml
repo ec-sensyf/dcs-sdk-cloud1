@@ -24,8 +24,151 @@
 		<github.global.server>github</github.global.server>
 		<github.site.repositoryName>dcs-sdk-cloud1</github.site.repositoryName>
 		<github.site.repositoryOwner>ec-sensyf</github.site.repositoryOwner>
+		<nest.version>5.1</nest.version>
+		<netcdf.version>4.2.20</netcdf.version>
 	</properties>
 	
+	<!-- NEST Modules ############################################# -->
+	<dependencies>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-core</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-dat</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-graph-builder</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-op-calibration</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-op-coregistration</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+                        <groupId>org.esa.nest</groupId>
+                        <artifactId>nest-op-orthorectification</artifactId>
+                        <version>${nest.version}</version>
+                </dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-op-sar-tools</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-io-sentinel1</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-op-sentinel1</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-ocean-tools</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-io</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.esa.nest</groupId>
+			<artifactId>nest-reader-dem</artifactId>
+			<version>${nest.version}</version>
+		</dependency>
+		<dependency>
+		        <groupId>edu.ucar</groupId>
+		        <artifactId>netcdf</artifactId>
+		        <version>${netcdf.version}</version>
+			<exclusions>
+            	</dependency>
+        </dependencies>
+	
+	<repositories>
+		<repository>
+			<id>bc-mvn</id>
+			<name>Public Maven Repository at Brockmann Consult</name>
+			<url>http://www.brockmann-consult.de/mvn/os</url>
+			<releases>
+				<enabled>true</enabled>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>array-mvn-repo</id>
+			<name>Public Maven Repository at Array Systems Computing Inc</name>
+			<url>http://www.array.ca/nest-web/maven</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>ppolabs-mvn-repo</id>
+			<name>Public Maven Repository of PPO.labs</name>
+			<url>http://maven.ppolabs.me/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net repository</name>
+			<url>http://download.java.net/maven/2</url>
+		</repository>
+		<repository>
+			<id>maven-repository.unidata.ucar.edu</id>
+			<name>Unidata Repository</name>
+			<url>http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases</url>
+		</repository>
+		<repository>
+			<id>osgeo</id>
+			<name>Open Source Geospatial Foundation Repository</name>
+			<url>http://download.osgeo.org/webdav/geotools/</url>
+		</repository>
+		<repository>
+			<id>repository.terradue.com</id>
+			<name>repository.terradue.com-releases</name>
+			<url>http://repository.terradue.com/artifactory/libs-release-public</url>
+			<releases>
+				<enabled>true</enabled>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+		</repository>
+
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<snapshots />
+			<id>repository.terradue.com</id>
+			<name>repository.terradue.com-releases</name>
+			<url>http://repository.terradue.com/artifactory/libs-release-public</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 	<build>
 		<extensions>
 			<extension>
